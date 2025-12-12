@@ -15,6 +15,10 @@ int partation(int arr[],int l,int r)
             arr[l]=arr[r];
             l++;
         }
+<<<<<<< HEAD
+=======
+     
+>>>>>>> 5db4a21 (quicksort)
         while(l<r&&pivot>arr[l])
         {
             l++;
@@ -63,7 +67,10 @@ int main() {
     
     cout << "排序后数组: ";
     printArray(arr,size);
+<<<<<<< HEAD
     //hello
+=======
+>>>>>>> 5db4a21 (quicksort)
     
     return 0;
 }
