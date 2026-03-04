@@ -120,6 +120,6 @@ int main()
     {
         que.push(rand()%100);
     }
-
+    //nihao
     return 0;
 }
