@@ -12,12 +12,12 @@ int partition(vector<int>& arr,int begin,int end)
         {
             end--;
         }
-        if(begin<end&&arr[end]<pivot)
+        if(begin<end)
         { 
             arr[begin]=arr[end];
             begin++;
         }
-        while(begin<end&&arr[begin]<pivot)
+        while(begin<end)
         {
             begin++;
         }
@@ -58,34 +58,23 @@ void quickselect(vector<int>& arr, int begin, int end,int k)
     }
     
 }
-class Trie
-{
-public:
-    Trie():root_(new TrieNode('\0',0)){}
-private:
-   struct TrieNode
-    {
-        TrieNode(char ch,int freq):ch_(ch),freq_(freq){}
-        char ch_;
-        int freq_;
-        map<char,TrieNode*> nodeMap_;
-    };
-  
-    TrieNode* root_; 
-};
+
 int main()
 {
-    vector<int> vec{1,2,8,5,7,9};
+    vector<int> vec{18,8,2,7,100};
     for(int num:vec)
     {
         cout<<num<<" ";
         
+        
     }
+    cout<<endl;
     cout<<"===="<<endl;
    quickselect(vec,0,vec.size()-1,3);
-   for(int i=0;i<3;i++)
+   for(int i=0;i<5;i++)
    {
         cout<<vec[i]<<" ";
    }
+   cout<<endl;
     return 0;
 }

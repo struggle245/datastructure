@@ -15,7 +15,6 @@ int partation(int arr[],int l,int r)
             arr[l]=arr[r];
             l++;
         }
-     
         while(l<r&&pivot>arr[l])
         {
             l++;
