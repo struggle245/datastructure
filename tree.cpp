@@ -72,7 +72,7 @@ vector<vector<int>> levelOrder(TreeNode* root){
             }
             if(node->right)
             {
-                q.push(node->right);\
+                q.push(node->right);
             }
         }
         result.push_back(vec);

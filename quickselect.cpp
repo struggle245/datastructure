@@ -61,7 +61,7 @@ void quickselect(vector<int>& arr, int begin, int end,int k)
 
 int main()
 {
-    vector<int> vec{18,8,2,7,100};
+    vector<int> vec{9,8,2,7,1};
     for(int num:vec)
     {
         cout<<num<<" ";

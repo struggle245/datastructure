@@ -117,7 +117,7 @@ public:
         }
 
     }
-  std::vector<std::string> queryPrefix(const std::string& prefix)
+     std::vector<std::string> queryPrefix(const std::string& prefix)
     {
         TrieNode* cur=root_;
         for(int i=0;i<prefix.size();i++)
@@ -130,7 +130,7 @@ public:
             cur=childIt->second;
         }
         std::vector<std::string> wordlist;
-        preOrder(cur,prefix,wordlist);
+        preOrder(cur,prefix.substr(0,prefix.size()-1),wordlist);
         return wordlist;
     }
 private:
@@ -168,8 +168,6 @@ int main()
     trie.add("hel");
     trie.add("he");
     trie.add("heword");
-    trie.add("hewsdsd");
-    trie.add("hew");
     //std::cout<<trie.query("hello")<<std::endl;
     std::cout<<"=========="<<std::endl;
     trie.preOrder();
