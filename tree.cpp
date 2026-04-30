@@ -17,8 +17,11 @@ struct ListNode{
 };
 class Solution {
 public:
+
+
 TreeNode* buildTree(const vector<string>& nodes)
 {
+
     if(nodes.empty()||nodes[0]=="null")return nullptr;
     TreeNode* root= new TreeNode(stoi(nodes[0]));
     queue<TreeNode*> q;
@@ -148,6 +151,43 @@ ListNode* reverseKGroup(ListNode* head, int k)
     }
     return dummy.next;
 }
+TreeNode* deleteNode(TreeNode* root, int key) {
+        if(root==nullptr)return root;
+        if(root->val==key){
+            if(root->right==nullptr&&root->left==nullptr){
+            delete root;
+            return nullptr;
+        }else if(root->left==nullptr){
+            auto rightnode=root->right;
+            delete root;
+            return rightnode;
+        }else if(root->right==nullptr){
+            auto leftnode=root->left;
+            delete root;
+            return leftnode;
+        }else{
+            auto cur=root->right;
+            while(cur->left)
+            {
+                cur=cur->left;
+            }
+            cur->left=root->left;
+            auto tmp=root;
+            root=root->right;
+            delete tmp;
+            return root;
+        }
+    }
+        if(root->val>key)
+        {
+            root->left=deleteNode(root->left,key);
+        }
+        if(root->val<key)
+        {
+            root->right=deleteNode(root->right,key);
+        }
+        return root;
+    }
 private:
     void preorderHelper(TreeNode* node, vector<int>& result) {
        if(node==nullptr){return;}
@@ -186,7 +226,7 @@ private:
 int main() {
     
     Solution solution;
-    vector<string> nodes = {"1", "2", "3", "8", "null", "4", "3"};
+    vector<string> nodes = {"5","3","6","2","4","null","7"};
     TreeNode* root = solution.buildTree(nodes);
     vector<int> preorder = solution.preorderTraversal(root);
     cout << "前序遍历结果: ";
