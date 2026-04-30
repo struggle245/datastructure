@@ -228,11 +228,8 @@ int main() {
     Solution solution;
     vector<string> nodes = {"5","3","6","2","4","null","7"};
     TreeNode* root = solution.buildTree(nodes);
-    vector<int> preorder = solution.preorderTraversal(root);
-    cout << "前序遍历结果: ";
-    for (int val : preorder) {  
-        cout << val << " ";
-    }
-    cout << endl;
+    TreeNode* root=solution.deleteNode(root,3);
+  
+  
     return 0;
 }
