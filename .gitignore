@@ -1,6 +1,4 @@
+.claude-summary.md
 a.out
-<<<<<<< HEAD
-=======
+.gitignore
 .vscode
->>>>>>> f9b5d35 (Initial commit)
-.vscode/
